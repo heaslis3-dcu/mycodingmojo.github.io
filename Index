@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>mycodingmojo</title>
-</head>
-<h1>TESTING</html>
-<p>Test website<p>
-
+  <head>
+    <title>mycodingmojo</title>
+  </head>
+    <body>
+      <h1>TESTING</html>
+        <p>Test website<p>
+    </body>
 </html>
