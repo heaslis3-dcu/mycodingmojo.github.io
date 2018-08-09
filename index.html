@@ -1,44 +1,75 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-<link rel="stylesheet" href="flexstyle.css">    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./css/flexstyle.css">    
+        <!--       Link looks after coding format displayed on website.-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/themes/prism.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
+    </head>
 
-    
-	<body>
+    <!--
+Reference: Scrolling Effect using CSS and JavaScript:
+Date: 07/08/2018
+Source: https://www.youtube.com/watch?v=llv5kW4sz0U
+Additional Source: freeCodeCamp:
+https://www.linkedin.com/feed/update/urn:li:activity:6432656923140587520
+-->
+    <body>
+        <div class="navbar-container">
+            <div id="navbar">
+                <a href="#">Home</a>
+                <a href="#">Blog</a>
+                <a href="#">Tutorials</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
 
-<ul class="navigation">
-  <li><a href="#">Home</a></li>
-  <li><a href="#">Blog</a></li>
-  <li><a href="#">Tutorials</a></li>
-  <li><a href="#">About</a></li>
-  <li><a href="#">Contact</a></li>
+        </div>
+        <!--
+<div class="navigation">
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">Tutorials</a></li>
+<li><a href="#">About</a></li>
+<li><a href="#">Contact</a></li>
 </ul>
-   
-<ul class="flex-container">
-  <li class="flex-item1">1</li>
-  <li class="flex-item1">2</li>
-  <li class="flex-item1">3</li>
-  <li class="flex-item">4</li>
-  <li class="flex-item">5</li>
-  <li class="flex-item">6</li>
-</ul>
-    
-<h2>This is code displayed on a website</h2>
+</div>
+-->
+
+        <div class="page-container">       
+            <div class="flex-container">     
+                <ul>
+                    <li class="flex-item" id="android_id">Android</li>
+                    <li class="flex-item" id="php_id">PHP</li>
+                    <li class="flex-item" id="html_id">HTML</li>
+                    <li class="flex-item" id="css_id">CSS</li>
+                    <li class="flex-item" id="javascript_id">JavaScript</li>
+                    <li class="flex-item" id="databases_id">Databases</li>
+                </ul>
+            </div>   
 
 
-<figure>
-  <figcaption><b>Your code title</b></figcaption>
+            
 
-		
-		<pre><code class="language-css">
-		
+
+            <figure>
+            <h2>This is code displayed on a website</h2>
+                
+                <figcaption><b>Your code title</b></figcaption>
+
+
+                <pre><code class="language-css">
+
+<!--
 		<html>
-		
+
 		</html>
+-->
 		body {
 			font: 100% Helvetica, sans-serif;
 			color: #333;
@@ -50,9 +81,23 @@
 			-ms-border-radius: 10px;
 			border-radius: 10px;
 		}</code></pre>
-	
-</figure>
 
+            </figure>
+        </div> 
+        <!--        <script src ="./javscript/main.js"></script>-->
+        <script>
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
+                var currentScrollPos = window.pageYOffset;
+                if (prevScrollpos > currentScrollPos) {
+                    document.getElementById("navbar").style.top = "0";
+                } else {
+                    document.getElementById("navbar").style.top = "-70px";
+                }
+                prevScrollpos = currentScrollPos;
+            }
+        </script>
+        <!--        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>-->
     </body>
 
 </html>

@@ -5,102 +5,207 @@ labelled 1-6 which adjust position when page size is decreased
 Reference: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 Date: 07/05/2018
 */
-.navigation {
+/*
+.navbar-container{
+    padding-left: 20px;
+    padding-right: 40px;
+}
+*/
+#navbar {
+/*Amended Flexbox CSS to allow for NavBar to 
+    hide/reappear on scrolldown/up (09/08/2018)*/
+    list-style: none;
+    margin:0;
+    background: grey;
+    padding: 10px;
+    position: fixed;
+            right:15px;
+            left: 15px;
+            top: 0;
+/*    width: 100%;*/
+    transition: top 0.3s;  /*Transition effect when sliding down (and up)*/ 
+    display: flex;
+ 
+
+
+/*    justify-content: flex-start; */
+
+    
+/*
   list-style: none;
   margin: 0; 
-  
-  background: deepskyblue;
-  
+  background: grey;
+    padding: 10px;
+     position: fixed;
+        top: 0;
+        right:20px;
+    left: 20px;
+ ///   width: 100%; ///
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  
+    
   -webkit-flex-flow: row wrap;
   justify-content: flex-start; 
+     transition: top 0.3s;
+    
+*/
 }
 
-.navigation a {
-  text-decoration: none;
-  display: block;
-  padding: 2em;
-  color: white;
+/* ------ Navigation bar - font ------*/
+#navbar a {
+    text-decoration: none;
+    display: block;
+    padding: 10px; /*reduced from 2em (09/08/2018)*/
+    color: white;
+ 
+    border-radius: 5px;
+
+    font-size: 1.25em; /*Added font-size navigation bar (09/08/2018)*/
+    font-family: verdana; /*Added font-family - reference: https://websitesetup.org/web-safe-fonts-html-css/ (09/08/2018)*/
 }
 
-.navigation a:hover {
-  background: darken(deepskyblue, 2%);
+/* ------ Navigation bar - font ------*/
+#navbar a:hover {
+    background: darken(grey, 2%);
+    color:black;
 }
 
 @media all and (max-width: 800px) {
-  .navigation {
-    justify-content: space-around;
-  }
+    #navbar {
+        justify-content: space-around;
+    }
 }
 
 @media all and (max-width: 600px) {
-  .navigation {
-    -webkit-flex-flow: column wrap;
-    flex-flow: column wrap;
-    padding: 0;
-  }
-  
-  .navigation a { 
-    text-align: center; 
-    padding: 10px;
-    border-top: 1px solid rgba(255,255,255,0.3); 
-    border-bottom: 1px solid rgba(0,0,0,0.1); 
-  }
+    #navbar {
+        -webkit-flex-flow: column wrap;
+        flex-flow: column wrap;
+        padding: 0;
+    }
+
+    #navbar a { 
+        text-align: center; 
+        padding: 10px;
+        border-top: 1px solid rgba(255,255,255,0.3); 
+        border-bottom: 1px solid rgba(0,0,0,0.1); 
+    }
 
 
-  .navigation li:last-of-type a {
-    border-bottom: none;
-  }
+    #navbar li:last-of-type a {
+        border-bottom: none;
+    }
 }
 /* This Flex-container and flex-item relate to six boxes 
 labelled 1-6 which adjust position when page size is decreased
 Reference: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
 Date: 07/05/2018
+Amended to include a div and moved class outside ul (09/08/2018)
 */
-.flex-container {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+
+/*page container */
+.page-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px; 
+    max-width: 1400px;
   
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  
-  -webkit-flex-flow: row wrap;
-  justify-content: space-around;
+}
+
+.flex-container ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+div>a:hover{
+    background:rgba(255,255,255,.9);
+    color:black;
 }
 
 .flex-item {
-  background: tomato;
-  padding: 5px;
-  width: 200px;
-  height: 150px;
-  margin-top: 10px;
-  
-  line-height: 150px;
-  color: white;
-  font-weight: bold;
-  font-size: 3em;
-  text-align: center;
+    background: tomato;
+    padding: 5px;
+    width: 405px;
+    height: 350px;
+    margin-top: 10px;  
+
+    /* code to adjust position of text inside flexbox (09/08/2018*/
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 350px;
 }
 
-.flex-item1 {
-  background: tomato;
-  padding: 5px;
-  width: 200px;
-  height: 200px;
-  margin-top: 10px;
-  
-  line-height: 150px;
-  color: white;
-  font-weight: bold;
-  font-size: 3em;
-  text-align: center;
+/**/
+/*
+
+ Landscape phones and down 
+@media (max-width: 480px) {
+    body{
+        padding: 0.5em;
+    }
+    .container{
+        width: 90%;
+    }
+    nav {
+        height: 0;
+        overflow: hidden;
+        -webkit-transition: all .3s ease;
+    }
+    input[type="checkbox"]:checked + nav{
+        height: 205px;
+    }
+    nav>a{
+        padding: 0 1em;
+        display: block;
+        border-bottom: solid 1px rgba(255,255,255,.1);
+    }
+    h1{
+        padding: .5em 0;
+    }
+    .header-left,
+    .header-right{
+        width: 100%;
+        text-align: center;
+    }
+    .section-left,
+    .section-right{
+        width: 100%;
+    }
+    .section-left{
+        text-align: center;
+        padding: 1em 0;
+    }
+    .section-right{
+        text-align: center;
+        padding: 1em 0 2em;
+    }
+    .section-title{
+        font-size: 2.4em;
+        margin-bottom: 0;
+    }
+    .section-tagline{
+        font-size: 1em;
+    }
+    .learn-more{
+        display: table;
+        margin: 0 auto;
+    }
+    .hidden-desktop{
+        display: block;
+    }
+*/
 }
