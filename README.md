@@ -1,2 +1,2 @@
 # mycodingmojo.github.io
-This is my github pages website
+This is a work in progress basic website
