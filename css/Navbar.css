@@ -1,0 +1,120 @@
+/* Logo styling*/
+/*
+body, html{
+font-size: 100%;
+font-family: "Helvetica", sans-serif;
+}
+body,html{
+margin:0;
+padding: 0;
+}
+*/
+/*Reference:
+1. - https://codepen.io/smashtheshell/pen/vmmbNd
+2. - 
+*/
+nav ul{
+    list-style: none;
+    padding:0;
+    background:grey;
+       
+}
+
+nav ul li a{
+    color:#ddd;
+    text-decoration: none;
+    padding: .8rem 1rem;
+    display: block;
+    line-height: 1;
+}
+nav ul li{
+    border-bottom: 1px dotted #ddd;
+}
+/*styling logo*/
+nav div:first-child{
+background:#222;
+}
+
+nav div:first-child h1{
+    line-height: 0;
+    padding: .8rem 0rem;
+    text-align: center;
+}
+/*
+nav div:first-child img{
+filter: contrast(0);
+}
+*/
+
+nav div:first-child h1, nav, ul{
+    margin:0;
+}
+
+/*Styling for larger devices*/
+
+@media only screen and (min-width: 30em){
+    nav{
+        display: flex;
+        justify-content: space-between;
+        background: orange;
+        align-items: center;
+    }
+
+    nav ul{
+        display: flex;
+        align-items: center;
+        background:none;
+        flex-wrap: wrap;
+    }
+    nav div:first-child h1{
+        padding: 0;
+/*        margin:0 1rem;*/
+    }
+/*    Set size of logo*/
+    nav div:first-child img{
+        height: 100px;
+
+    }
+/*    hides visble line below navigation headings*/
+    nav ul li{
+        border-bottom:none;
+        flex: 1 0 auto;
+        position: relative;
+    }
+   
+    /* ------ Navigation bar - font ------*/
+    /*    Decoration box around Navigation text    */
+    nav ul li a{
+        text-decoration: none;
+        display: block;
+        padding: 30px; /*reduced from 2em (09/08/2018)*/
+        color: whitesmoke;
+
+        border-radius: 5px;
+
+        font-size: 1.25em; /*Added font-size navigation bar (09/08/2018)*/
+        font-family: verdana; /*Added font-family - reference: https://websitesetup.org/web-safe-fonts-html-css/ (09/08/2018)*/
+    }
+
+    /*    Color and hover Navigation Item Decoration box */
+    nav ul li a:hover{
+        background:rgba(255,255,255,.9);
+        color:dimgrey;
+    }
+    
+    
+    
+/*
+    nav ul li a::before{
+    left:0;
+}
+    
+
+    
+    nav ul li a:hover::after,nav ul li a:hover::before{
+    width: 50%;
+} 
+*/
+    
+
+}
